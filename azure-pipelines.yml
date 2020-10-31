@@ -30,3 +30,12 @@ steps:
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
+    
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '/home/vsts/work/1/s/examples/target/client-java-examples-1.0.0-beta2-SNAPSHOT-jar-with-dependencies.jar'
+    includeRootFolder: true
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+    verbose: true
