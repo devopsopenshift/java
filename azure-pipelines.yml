@@ -50,6 +50,7 @@ steps:
 
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    PathtoPublish: '/home/vsts/work/1/s/examples/target/client-java-examples-1.0.0-beta2-SNAPSHOT-jar-with-dependencies.zip'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+
