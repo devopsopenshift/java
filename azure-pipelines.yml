@@ -9,6 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
@@ -22,9 +23,7 @@ steps:
   inputs:
     mavenPomFile: 'pom.xml'
     goals: 'clean package install'
-    options: '-Dmaven.skip.test=true'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    options: '-Dmaven.test.skip=true'
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
