@@ -39,12 +39,6 @@ steps:
     replaceExistingArchive: true
     verbose: true
 
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
-
 - task: Bash@3
   inputs:
     targetType: 'inline'
@@ -54,3 +48,8 @@ steps:
       mv '/home/vsts/work/1/s/examples/target/client-java-examples-1.0.0-beta2-SNAPSHOT-jar-with-dependencies.jar' '/home/vsts/work/1/s/examples/target/client-java-examples-1.0.0-beta2-SNAPSHOT-jar-with-dependencies.zip'
     noRc: false
 
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'
