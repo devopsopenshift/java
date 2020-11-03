@@ -10,13 +10,14 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-- name: one
-  value: initialValue 
+- name: COUD_FORMATION_PKG_PATH
+  value: 'aws-cloudformation/'
+  readonly: true
 
-steps:
-  - template: template.yml  # Template reference
-  - script: |
-      echo ${{ variables.one }} # outputs initialValue
-    displayName: Display Template variables
-  - bash: echo ${{ parameters.APPLICATION }}
-    displayName: Display Template Paramters
+stages:
+  - stage:
+    jobs:
+      - job: 
+        steps:
+          - template: template.yml
+
