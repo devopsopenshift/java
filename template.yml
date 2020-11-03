@@ -1,9 +1,9 @@
 # File: template.yml
-trigger:
-- azure-pipelines-2
+#trigger:
+#- azure-pipelines-2
 
-pool:
-  vmImage: 'ubuntu-latest'
+#pool:
+#  vmImage: 'ubuntu-latest'
 
 parameters:
 - name: APPLICATION # the name of the parameter is buildSteps
