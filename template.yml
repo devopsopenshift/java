@@ -21,3 +21,9 @@ steps:
     displayName: Display COUD_FORMATION_PKG_PATH
   - bash: echo ${{ parameters.APPLICATION }}
     displayName: Display APPLICATION
+  
+  - task: PythonScript@0
+    inputs:
+      scriptSource: 'inline'
+      script: 'print ''hello'''
+      failOnStderr: true
