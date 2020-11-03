@@ -1,10 +1,23 @@
 # File: template.yml
+trigger:
+- azure-pipelines-2
+
+pool:
+  vmImage: 'ubuntu-latest'
+
 parameters:
 - name: APPLICATION # the name of the parameter is buildSteps
   type: string # data type is StepList
-  default: jdprism # default value of buildSteps
+  default: JDPrism # default value of buildSteps
 
 variables:
-- name: COUD-FORMATION-PKG-PATH
+- name: COUD_FORMATION_PKG_PATH
   value: 'aws-cloudformation/'
   readonly: true
+
+steps:
+  - script: |
+      echo ${{ variables.COUD_FORMATION_PKG_PATH }} # outputs initialValue
+    displayName: Display COUD_FORMATION_PKG_PATH
+  - bash: echo ${{ parameters.APPLICATION }}
+    displayName: Display APPLICATION
