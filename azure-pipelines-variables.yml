@@ -16,7 +16,7 @@ variables:
 steps:
   - template: template.yml  # Template reference
   - script: |
-      echo ${{ variables.COUD-FORMATION-PKG-PATH }} # outputs initialValue
+      echo ${{ variables.COUD_FORMATION_PKG_PATH }} # outputs initialValue
     displayName: Display Template variables
   - bash: echo ${{ parameters.APPLICATION  }}
     displayName: Display Template Paramters
