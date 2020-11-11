@@ -34,6 +34,6 @@ stages:
         variables:
           prm : $[dependencies.readVar.outputs['varSet.FOO']]
         steps:
-          - template: 
+          - template: template.yml
             parameters:
               APPLICATION : $(prm)
