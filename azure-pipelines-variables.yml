@@ -19,5 +19,15 @@ stages:
     jobs:
       - job: 
         steps:
+          - task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
+                # Write your commands here
+                
+                echo 'Hello world'
+                echo ##vso[task.setvariable variable=FOO]SOMEAPP
           - template: template.yml
+            parameters:
+              APPLICATION :  $(FOO)
 
