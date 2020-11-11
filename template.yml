@@ -23,7 +23,7 @@ steps:
     displayName: Display APPLICATION
   
   - task: PythonScript@0
-    nabled: false
+    enabled: false
     inputs:
       scriptSource: 'inline'
       script: 'print ${{parameters.APPLICATION}}'
