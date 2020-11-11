@@ -21,6 +21,7 @@ stages:
         steps:
           - task: Bash@3
             displayName: "variable setter"
+            name: varSet
             inputs:
               targetType: 'inline'
               script: |
@@ -28,7 +29,15 @@ stages:
                 
                 FOO='somevalue'
                 echo '##vso[task.setvariable variable=FOO;isOutput=true]$FOO'
+          - task: Bash@3
+            displayName: "PRINT VAR"
+            inputs:
+              targetType: 'inline'
+              script: |
+                # Write your commands here
+               
+                echo "$(varSet.FOO)"
           - template: template.yml
             parameters:
-              APPLICATION :  $(COUD_FORMATION_PKG_PATH)
+              APPLICATION :  $(varSet.FOO)
 
