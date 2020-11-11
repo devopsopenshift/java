@@ -17,7 +17,7 @@ variables:
 stages:
   - stage:
     jobs:
-      - job: 
+      - job: readVar
         steps:
           - task: Bash@3
             displayName: "variable setter"
@@ -28,16 +28,12 @@ stages:
                 # Write your commands here
                 
                 FOO='somevalue'
-                echo '##vso[task.setvariable variable=FOO;isOutput=true]$FOO'
-          - task: Bash@3
-            displayName: "PRINT VAR"
-            inputs:
-              targetType: 'inline'
-              script: |
-                # Write your commands here
-               
-                echo "$(varSet.FOO)"
-          - template: template.yml
+                echo '##vso[task.setvariable variable=FOO;isOutput=true]'$FOO
+      - job: 
+        dependsOn: readVar
+        variables:
+          prm : $[dependencies.readVar.outputs['varSet.FOO']]
+        steps:
+          - template: 
             parameters:
-              APPLICATION :  $(varSet.FOO)
-
+              APPLICATION : $(prm)
