@@ -20,13 +20,14 @@ stages:
       - job: 
         steps:
           - task: Bash@3
+            displayName: "variable setter"
             inputs:
               targetType: 'inline'
               script: |
                 # Write your commands here
                 
-                echo 'Hello world'
-                echo ##vso[task.setvariable variable=FOO]SOMEAPP
+                FOO='somevalue'
+                echo '##vso[task.setvariable variable=FOO;isOutput=true]$FOO'
           - template: template.yml
             parameters:
               APPLICATION :  $(FOO)
