@@ -26,7 +26,7 @@ stages:
            script: |
             # Write your commands here
       
-             echo $(ev)
+             echo $EV
   - stage: templateState2
     jobs:
       - job: 
@@ -38,5 +38,5 @@ stages:
            script: |
             # Write your commands here
       
-             echo $(ev)
+             echo $EV
  
