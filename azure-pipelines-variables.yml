@@ -19,6 +19,7 @@ stages:
     jobs:
       - job: readVar
         steps:
+          - checkout: none
           - task: Bash@3
             displayName: "variable setter"
             name: varSet
