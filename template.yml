@@ -27,7 +27,7 @@ stages:
             # Write your commands here
              printenv
 
-- stage: templateState2
+  - stage: templateState2
     jobs:
       - job: 
         steps:
