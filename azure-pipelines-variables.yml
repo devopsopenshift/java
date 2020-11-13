@@ -29,7 +29,9 @@ stages:
                 # Write your commands here
                 
                 FOO='somevalue'
-                echo '##vso[task.setvariable variable=FOO;isOutput=true]'$FOO
+                echo 'ev = '$ev
+                ev = FOO
+                echo '##vso[task.setvariable variable=ev;isOutput=true]'$FOO
   - template: template.yml
     parameters:
       APPLICATION : $[stageDependencies.firstStage.readVar.outputs['varSet.FOO']]
