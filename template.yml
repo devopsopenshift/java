@@ -19,22 +19,24 @@ stages:
     jobs:
       - job: 
         steps:
+        - checkout: none
         - task: Bash@3
           inputs:
            targetType: 'inline'
            script: |
             # Write your commands here
       
-             echo ${{parameters.APPLICATION}}
+             echo $(ev)
   - stage: templateState2
     jobs:
       - job: 
         steps:
+        - checkout: none
         - task: Bash@3
           inputs:
            targetType: 'inline'
            script: |
             # Write your commands here
       
-             echo ${{parameters.APPLICATION}}
+             echo $(ev)
  
