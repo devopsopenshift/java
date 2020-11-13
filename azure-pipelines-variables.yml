@@ -29,7 +29,7 @@ stages:
                 # Write your commands here
                 
                 FOO='somevalue'
-                EV = FOO
+                set EV = FOO
                 echo 'ev = '$EV
                 echo '##vso[task.setvariable variable=ev;isOutput=true]'$FOO
   - template: template.yml
