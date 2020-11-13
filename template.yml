@@ -14,18 +14,15 @@ parameters:
 #- name: COUD_FORMATION_PKG_PATH
 #  value: 'aws-cloudformation/'
 #  readonly: true
-
-steps:
-  - script: |
-      echo ${{ variables.COUD_FORMATION_PKG_PATH }} # outputs initialValue
-    displayName: Display COUD_FORMATION_PKG_PATH
-  - bash: echo ${{ parameters.APPLICATION }}
-    displayName: Display APPLICATION
-  
-  - task: PythonScript@0
-    enabled: false
-    inputs:
-      scriptSource: 'inline'
-      script: 'print ${{parameters.APPLICATION}}'
-      failOnStderr: true
+stages:
+  - stage: templateStae
+    jobs:
+      - job: 
+        steps:
+        - task: Bash@3
+          inputs:
+           targetType: 'inline'
+           script: |
+            # Write your commands here
       
+             echo ${{parameters.APPLICATION}}
