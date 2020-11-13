@@ -29,7 +29,7 @@ stages:
                 # Write your commands here
                 
                 FOO='somevalue'
-                export EV = $FOO
+                env - NM=V2
                 echo 'ev = '$EV
                 echo '##vso[task.setvariable variable=app;isOutput=true]'$FOO
   - template: template.yml
