@@ -25,9 +25,9 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-      
-             echo ${{parameters.APPLICATION}}
-  - stage: templateState2
+             printenv
+
+- stage: templateState2
     jobs:
       - job: 
         steps:
