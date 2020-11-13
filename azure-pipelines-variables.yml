@@ -31,8 +31,8 @@ stages:
                 FOO='somevalue'
                 export EV = $FOO
                 echo 'ev = '$EV
-                echo '##vso[task.setvariable variable=ev;isOutput=true]'$FOO
+                echo '##vso[task.setvariable variable=app;isOutput=true]'$FOO
   - template: template.yml
     parameters:
-      APPLICATION : $[stageDependencies.firstStage.readVar.outputs['varSet.FOO']]
+      APPLICATION : $[stageDependencies.firstStage.readVar.outputs['varSet.app']]
      
