@@ -35,4 +35,3 @@ stages:
   - template: template.yml
     parameters:
       APPLICATION : $[stageDependencies.firstStage.readVar.outputs['varSet.app']]
-     
