@@ -45,6 +45,6 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo ${{variables.app3}}
+             echo $APP3
 
  
