@@ -11,9 +11,9 @@ parameters:
   default: JDPrism # default value of buildSteps
 
 variables:
- - name: app3
-   value: tn
-   readonly: false
+ app3 : apN
+
+
 #variables:
 #- name: COUD_FORMATION_PKG_PATH
 #  value: 'aws-cloudformation/'
