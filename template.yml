@@ -25,7 +25,7 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $(variables.app)
+             echo ${{variables.app}}
 
   - stage: templateState2
     dependsOn: templateStae
