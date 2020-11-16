@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-- name: app
+- name: app2
   value: 'aws-cloudformation/'
   #readonly: true
 
