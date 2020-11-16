@@ -17,20 +17,6 @@ parameters:
 #  value: 'aws-cloudformation/'
 #  readonly: true
 stages:
-  - stage: templateState2
-#    dependsOn: firstStage
-    jobs:
-      - job: 
-        variables:
-          app : $[stageDependencies.firstStage.readVar.outputs['varSet.app']]
-        steps:
-        - checkout: none
-        - task: Bash@3
-          inputs:
-           targetType: 'inline'
-           script: |
-            # Write your commands here
-             echo $APP
   - stage: templateState3
 #    dependsOn: firstStage
     jobs:
@@ -45,6 +31,5 @@ stages:
            script: |
             # Write your commands here
              echo $APP2
-             echo $APP
 
  
