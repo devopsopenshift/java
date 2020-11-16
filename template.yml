@@ -39,7 +39,6 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $(app)  
              echo $APP
 
  
