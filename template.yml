@@ -16,6 +16,8 @@ parameters:
 #  readonly: true
 stages:
   - stage: templateStae
+    dependsOn: firstStage
+    condition: succeeded(firstStage)
     jobs:
       - job: 
         steps:
@@ -25,9 +27,11 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             printenv
+             echo $APP
 
   - stage: templateState2
+    dependsOn: templateStae
+    condition: succeeded(templateStae)
     jobs:
       - job: 
         steps:
@@ -37,7 +41,7 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $EV
+             echo $APP
              printenv
 
  
