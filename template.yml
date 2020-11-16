@@ -28,10 +28,11 @@ stages:
              echo ${{variables.app}}
 
   - stage: templateState2
-    dependsOn: templateStae
-    condition: succeeded()
+    dependsOn: firstStage
     jobs:
       - job: 
+        variables:
+          app : $[stageDependencies.firstStage.readVar.outputs['varSet.app']]
         steps:
         - checkout: none
         - task: Bash@3
@@ -40,5 +41,7 @@ stages:
            script: |
             # Write your commands here
              echo $VARIABLES_APP
+             echo 'second call'
+             echo $(app)
 
  
