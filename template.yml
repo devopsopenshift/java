@@ -36,7 +36,7 @@ stages:
     jobs:
       - job: 
         variables:
-          app3 : $[stageDependencies.firstStage.readVar.outputs['varSet.app2']]
+          app2 : $[stageDependencies.firstStage.readVar.outputs['varSet.app2']]
         steps:
         - checkout: none
         - task: Bash@3
@@ -45,5 +45,6 @@ stages:
            script: |
             # Write your commands here
              echo $APP3
+             echo $APP
 
  
