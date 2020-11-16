@@ -10,9 +10,9 @@ pool:
   vmImage: 'ubuntu-latest'
 
 variables:
-- name: COUD_FORMATION_PKG_PATH
+- name: app
   value: 'aws-cloudformation/'
-  readonly: true
+  #readonly: true
 
 stages:
   - stage: firstStage
