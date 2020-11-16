@@ -27,7 +27,7 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $APP
+             echo ${{ APPLICATION}}
 
   - stage: templateState2
     dependsOn: templateStae
@@ -41,7 +41,7 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $APP
+             echo $(app)  
              printenv
 
  
