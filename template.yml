@@ -10,9 +10,9 @@ parameters:
   type: string # data type is StepList
   default: JDPrism # default value of buildSteps
 
-variables:
-- name: COUD_FORMATION_PKG_PATH
-  value: 'aws-cloudformation/'
+#variables:
+#- name: COUD_FORMATION_PKG_PATH
+#  value: 'aws-cloudformation/'
 #  readonly: true
 stages:
   - stage: templateStae
