@@ -31,7 +31,7 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $(app)
+             echo $APP
   - stage: templateState3
 #    dependsOn: firstStage
     jobs:
@@ -45,8 +45,6 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $VARIABLES_APP
-             echo 'second call'
              echo ${{variables.app3}}
 
  
