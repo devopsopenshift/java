@@ -10,8 +10,6 @@ parameters:
   type: string # data type is StepList
   default: JDPrism # default value of buildSteps
 
-variables:
- app3 : apN
 
 
 #variables:
