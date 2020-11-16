@@ -61,6 +61,6 @@ stages:
             # Write your commands here
              echo $VARIABLES_APP
              echo 'second call'
-             echo $(app2)
+             echo $[stageDependencies.firstStage.readVar.outputs['varSet.app2']]
 
  
