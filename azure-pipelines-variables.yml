@@ -9,6 +9,11 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
+variables:
+- name: app2
+  value: 'aws-cloudformation/'
+  #readonly: true
+
 stages:
   - stage: firstStage
     jobs:
