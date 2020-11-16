@@ -43,8 +43,6 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $VARIABLES_APP
-             echo 'second call'
              echo $(app)
   - stage: templateState3
 #    dependsOn: firstStage
