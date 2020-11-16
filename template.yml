@@ -44,7 +44,7 @@ stages:
            targetType: 'inline'
            script: |
             # Write your commands here
-             echo $APP3
+             echo $APP2
              echo $APP
 
  
