@@ -28,7 +28,7 @@ stages:
              echo ${{variables.app}}
 
   - stage: templateState2
-    dependsOn: firstStage
+#    dependsOn: firstStage
     jobs:
       - job: 
         variables:
