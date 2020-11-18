@@ -42,11 +42,10 @@ stages:
                 #code here
                 print 'foo = $(varSet.FOO)'
                 print 'ev = $(varSet.EV)'
-                print 'env var = $VARSET_EV'
       - job: printVar
         dependsOn: readVar
         variables:
-         TOO : $[dependencies.readVar.outputs['varSet.FOO']]
+         FOO : $[dependencies.readVar.outputs['varSet.FOO']]
         steps:
           - checkout: none
           - task: Bash@3
@@ -54,8 +53,8 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                print 'foo = $(FOO)'
-                print 'foo = $(EV)'
+                print '$(FOO)'
+                print '$(EV)'
               failOnStderr: true
   - template: template.yml
     parameters:
