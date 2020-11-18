@@ -54,8 +54,8 @@ stages:
             inputs:
               targetType: inline
               script: |
-                print '$(FOO)'
-                print '$(EV)'
+                echo '$(FOO)'
+                echo '$(EV)'
               failOnStderr: true
   - template: template.yml
     parameters:
