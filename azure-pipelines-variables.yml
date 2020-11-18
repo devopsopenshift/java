@@ -50,12 +50,11 @@ stages:
         steps:
           - checkout: none
           - task: Bash@3
-            displayName: "task in target job readVar"
             inputs:
               targetType: 'inline'
               script: |
                 print 'foo = $(FOO)'
-                print 'foo = '$(EV)'
+                print 'foo = $(EV)'
                 print 'env var = $VARSET_EV'
               failOnStderr: true
   - template: template.yml
