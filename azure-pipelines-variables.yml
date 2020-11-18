@@ -47,8 +47,6 @@ stages:
                 os.system('printenv')
       - job: printVar
         dependsOn: readVar
-        variables:
-         FOO : $[dependencies.readVar.outputs['varSet.FOO']]
         steps:
           - checkout: none
           - task: Bash@3
