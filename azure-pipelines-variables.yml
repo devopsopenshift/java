@@ -41,9 +41,10 @@ stages:
               scriptSource: inline
               script: |
                 #code here
+                import os
                 print 'foo = $(varSet.FOO)'
                 print 'ev = $(varSet.EV)'
-                printenv
+                os.system('printenv')
       - job: printVar
         dependsOn: readVar
         variables:
