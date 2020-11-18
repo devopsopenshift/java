@@ -45,7 +45,7 @@ stages:
                 print 'foo = $(varSet.FOO)'
                 print 'ev = $(varSet.EV)'
                 print 'foo 1=$VARSET_FOO'
-                os.system('echo "foo 1=$VARSET_FOO"')
+                os.system('echo "foo 1="$VARSET_FOO')
                 
       - job: printVar
         dependsOn: readVar
