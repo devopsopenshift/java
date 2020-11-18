@@ -46,17 +46,17 @@ stages:
       - job: printVar
         dependsOn: readVar
         variables:
-         FOO : $[dependencies.readVar.outputs['varSet.FOO']]
+         TOO : $[dependencies.readVar.outputs['varSet.FOO']]
         steps:
           - checkout: none
           - task: Bash@3
+            displayName: 'print vars in job printvar'
             inputs:
               targetType: 'inline'
               script: |
                 print 'foo = $(FOO)'
                 print 'foo = $(EV)'
-                print 'env var = $VARSET_EV'
               failOnStderr: true
   - template: template.yml
     parameters:
-      APPLICATION : $[stageDependencies.firstStage.readVar.outputs['varSet.app']]
+      APPLICATION : $[stageDependencies.firstStage.readVar.outputs['varSet.FOO']]
