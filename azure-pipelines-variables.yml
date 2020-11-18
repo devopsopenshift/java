@@ -33,6 +33,25 @@ stages:
                 echo 'ev = '$EV
                 echo '##vso[task.setvariable variable=app;isOutput=true]'$FOO
                 echo '##vso[task.setvariable variable=app2;isOutput=true]'$EV
+          - task: PythonScript@0
+            displayName: "print in python"
+            name: printByPython
+            inputs:
+              scriptSource: inline
+              script: |
+                #code here
+                print 'foo = '$(varSet.FOO)'
+                print 'ev = $(varSet.EV)'
+      - job: printVar
+        dependsOn: readVar
+        steps:
+          - checkout: none
+          - task: Bash@3
+            displayName: "task in target job readVar"
+            inputs:
+              targetType: 'inline'
+              script: |
+                print 'foo = '$(varSet.FOO)'
   - template: template.yml
     parameters:
       APPLICATION : $[stageDependencies.firstStage.readVar.outputs['varSet.app']]
