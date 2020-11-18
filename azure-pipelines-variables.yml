@@ -42,11 +42,11 @@ stages:
                 #code here
                 print 'foo = $(varSet.FOO)'
                 print 'ev = $(varSet.EV)'
+                print 'env var = '$VARSET_EV
       - job: printVar
         dependsOn: readVar
         variables:
          FOO : $[dependencies.readVar.outputs['varSet.FOO']]
-         EV : $[dependencies.readVar.outputs['varSet.EV']]
         steps:
           - checkout: none
           - task: Bash@3
@@ -56,6 +56,7 @@ stages:
               script: |
                 print 'foo = $(FOO)'
                 print 'foo = '$(EV)'
+                print 'env var = '$VARSET_EV
               failOnStderr: true
   - template: template.yml
     parameters:
