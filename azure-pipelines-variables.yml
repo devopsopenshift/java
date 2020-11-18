@@ -40,7 +40,7 @@ stages:
               scriptSource: inline
               script: |
                 #code here
-                print 'foo = '$(varSet.FOO)'
+                print 'foo = $(varSet.FOO)'
                 print 'ev = $(varSet.EV)'
       - job: printVar
         dependsOn: readVar
