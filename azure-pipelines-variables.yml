@@ -56,6 +56,8 @@ stages:
               script: |
                 echo '$(FOO)'
                 echo '$(EV)'
+                echo $FOO
+                printenv
               failOnStderr: true
   - template: template.yml
     parameters:
