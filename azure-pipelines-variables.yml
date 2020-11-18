@@ -33,6 +33,7 @@ stages:
                 echo 'ev = '$EV
                 echo '##vso[task.setvariable variable=FOO;isOutput=true]'$FOO
                 echo '##vso[task.setvariable variable=EV;isOutput=true]'$EV
+                printenv
           - task: PythonScript@0
             displayName: "print in python"
             name: printByPython
@@ -42,6 +43,7 @@ stages:
                 #code here
                 print 'foo = $(varSet.FOO)'
                 print 'ev = $(varSet.EV)'
+                printenv
       - job: printVar
         dependsOn: readVar
         variables:
@@ -56,8 +58,6 @@ stages:
               script: |
                 echo '$(FOO)'
                 echo '$(EV)'
-                echo $FOO
-                printenv
               failOnStderr: true
   - template: template.yml
     parameters:
