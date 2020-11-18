@@ -50,8 +50,9 @@ stages:
           - checkout: none
           - task: Bash@3
             displayName: 'print vars in job printvar'
+            name: printVarBash
             inputs:
-              targetType: 'inline'
+              targetType: inline
               script: |
                 print '$(FOO)'
                 print '$(EV)'
